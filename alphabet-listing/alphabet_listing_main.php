@@ -123,7 +123,7 @@ class AlphabetPlugin {
 						'category'        => $cat_id,
 						'orderby'         => 'post_date',
 						'order'           => 'DESC',
-						'post_type'       => 'post',
+						'post_type'       => 'product',
 						'post_status'     => 'publish',
 						'suppress_filters' => true 
 					);
@@ -143,6 +143,9 @@ class AlphabetPlugin {
 	        case 'page':
 	            $sql = "select id, post_title from $wpdb->posts where post_status = 'publish' AND post_type = 'page' ORDER BY post_title";
 	            break;
+	        case 'product':
+	            $sql = "select id, post_title from $wpdb->posts where post_status = 'publish' AND post_type = 'product' ORDER BY post_title";
+	            break;    
 	        case 'category':
 	            $sql = "SELECT term_id as id, name as post_title FROM $wpdb->terms ORDER BY name";
 	            break;
@@ -241,6 +244,10 @@ class AlphabetPlugin {
 	            $this->get_all_titles('page', $atts);
 	            $this->link_text = "page_id";
 				break;
+		case 'product':
+	            $this->get_all_titles('product', $atts);
+	            $this->link_text = "page_id";
+				break;		
 	        case 'category':
 	            $this->get_all_titles('category', $atts);
 				$this->link_text = "cat";
