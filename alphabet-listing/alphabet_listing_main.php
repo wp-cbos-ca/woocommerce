@@ -114,7 +114,7 @@ class AlphabetPlugin {
 		switch ($type) 
 		{
 	        case 'post':
-                if($atts['category'])
+                if( isset($atts['category']) && $atts['category'])
                 {
                     $category_name = $atts['category'];
                     $result = get_term_by('name', $category_name, 'category', ARRAY_A);
@@ -148,7 +148,7 @@ class AlphabetPlugin {
 	            break;
 	    }
 		
-	    if($atts['category'])
+	    if(isset($atts['category']) && $atts['category'])
 	    {
 	    	$this->result = $post_list;
 	    }
