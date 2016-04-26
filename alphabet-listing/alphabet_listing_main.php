@@ -52,7 +52,7 @@ class AlphabetPlugin {
 	public function aplhabet_listing_activate() {
 		$new_options = array(
 			'title' => 'A to Z listing',
-			'type' => 'post', 
+			'type' => 'product', 
 			'bg_colour' => '#f0f0f0',
 			'text_colour' => '#424242'
 		);
