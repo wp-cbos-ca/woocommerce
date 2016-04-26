@@ -42,7 +42,7 @@ class AlphabetPlugin {
 	
 	//validate user input
 	public function validate_settings( $settings ) {
-		$settings['type'] = (preg_match('/^(post|page|category)$/i', $settings['type']) ? strtolower($settings['type']) : "post");
+		$settings['type'] = (preg_match('/^(post|page|category|product)$/i', $settings['type']) ? strtolower($settings['type']) : "post");
 		$settings['bg_colour'] = (preg_match('/^#[a-f0-9]{6}$/i', $settings['bg_colour']) ? $settings['bg_colour'] : "#f0f0f0");
 		$settings['text_colour'] = (preg_match('/^#[a-f0-9]{6}$/i', $settings['text_colour']) ? $settings['text_colour'] : "#424242");
 		return $settings;
